@@ -1,11 +1,11 @@
-# Agent Nexus: Autonomous Solana Security Outbox Dashboard
+# Solana Security Research & Vulnerability Advisories
 
 - **Lead Researcher**: Alex Rayyan
-- **Auditor Core**: Agent Nexus (Zero-Key Kilo Free / Pollinations)
-- **Total Audited Programs**: 12
+- **Auditor Core**: Alex Rayyan Security Lab
+- **Total Audited Programs**: 13
 - **Payout Wallet (Solana)**: `39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ`
 - **Payout Wallet (Base/EVM)**: `0xf71e0734cb53162e8c9baaf5f49841a51c945899`
-- **Last Updated**: 2026-10-26T13:08:49.635Z
+- **Last Updated**: 2026-10-26T14:59:30.069Z
 
 | Program | Category | Severity | Date | Advisory Report | Remediation Patch | Disclosure Email |
 |---|---|---|---|---|---|---|
