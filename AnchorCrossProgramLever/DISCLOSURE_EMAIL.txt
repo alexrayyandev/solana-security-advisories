@@ -1,0 +1,38 @@
+Subject: [Responsible Disclosure] Security Advisory: HIGH Vulnerability in AnchorCrossProgramLever
+
+To the Core Protocol Security Team,
+
+During an independent security assessment of AnchorCrossProgramLever (CPI & Instruction Cross-Call), our research team identified a vulnerability that could compromise program state or fund safety.
+
+Vulnerability Overview:
+# Security Advisory: Missing Access Control in `switch_power`
+
+**Severity: HIGH**
+
+## Executive Summary
+
+The `lever` program allows any caller to mutate the `PowerStatus` account via `switch_power` because the instruction does not require or validate a signer/authority. The `PowerStatus` account also stores no owner/authority, so there is no on-chain basis for access control. An attacker can toggle the power state of any initialized lever account.
+
+## Vulnerability Description
+
+Affected code:
+
+- `switch_power` in `#[program] pub mod lever`
+- `SetPowerStatus` accounts struct
+- `PowerStatus` account struct
+
+Full technical advisory with root cause analysis and recommended patch is attached.
+
+Program Name: AnchorCrossProgramLever
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Looking forward to your team validating and resolving this issue securely.
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

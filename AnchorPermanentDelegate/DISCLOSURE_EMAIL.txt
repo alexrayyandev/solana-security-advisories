@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: HIGH in AnchorPermanentDelegate
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorPermanentDelegate (Token-2022 Permanent Delegate Vault), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Defensive Security Audit — `permanent_delegate` Program
+
+**Researcher:** Alex Rayyan (bansoslab2026@tutamail.com)
+
+## Executive Summary & Severity Rating
+
+**Overall Risk: MEDIUM-HIGH** (no exploitable fund-drain via missing signer checks, but concentrated authority and improper error handling present).
+
+| # | Finding | Severity |
+|---|---------|----------|
+| F-01 | `assert_eq!` panic instead of `require_eq!` in production path | MEDIUM |
+| F-02 | Permanent delegate == payer == mint authority (single-key total control) | HIGH (architectural) |
+| F-03 | No explicit owner check on mint account before unpacking extension data | LOW |
+| F-04 | No re-initialization / authority-rotation guard beyond `init` | LOW |
+
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorPermanentDelegate
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

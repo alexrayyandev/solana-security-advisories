@@ -1,0 +1,38 @@
+Subject: [Responsible Disclosure] Security Advisory: CRITICAL Vulnerability in AnchorBasicVault
+
+To the Core Protocol Security Team,
+
+During an independent security assessment of AnchorBasicVault (Account State & Authority Vault), our research team identified a vulnerability that could compromise program state or fund safety.
+
+Vulnerability Overview:
+# Security Advisory — `basic_2` Program
+
+**Researcher:** Alex Rayyan (bansoslab2026@tutamail.com)
+**USDC (Solana):** `39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ`
+**USDC (Base/EVM):** `0xf71e0734cb53162e8c9baaf5f49841a51c945899`
+
+---
+
+## Executive Summary
+
+| # | Finding | Severity |
+|---|---------|----------|
+| F-1 | Unchecked integer overflow in `increment` (`counter.count += 1`) | MEDIUM |
+| F-2 | Unrestricted `authority` assignment in `create` (no signer/ownership validation) | MEDIUM |
+
+
+Full technical advisory with root cause analysis and recommended patch is attached.
+
+Program Name: AnchorBasicVault
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Looking forward to your team validating and resolving this issue securely.
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

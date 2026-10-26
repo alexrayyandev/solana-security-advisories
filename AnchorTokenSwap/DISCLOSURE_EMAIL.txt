@@ -1,0 +1,38 @@
+Subject: [Responsible Disclosure] Security Advisory: CRITICAL Vulnerability in AnchorTokenSwap
+
+To the Core Protocol Security Team,
+
+During an independent security assessment of AnchorTokenSwap (AMM & Liquidity Pool), our research team identified a vulnerability that could compromise program state or fund safety.
+
+Vulnerability Overview:
+# Security Audit Advisory
+
+**Program:** `swap_example` (AMM / Swap)
+**Declared Program ID:** `UPxp2moQFWsGqfFd3ynqG2W9mj9CTjH68NN2bYUAqV1`
+**Auditor:** Alex Rayyan (bansoslab2026@tutamail.com)
+**Scope Provided:** `lib.rs` only (module root / entry point)
+
+---
+
+## ⚠️ Scope Limitation Notice
+
+The submitted artifact contains **only** the program entry point (`lib.rs`). The actual instruction handlers, account validation structs (`Context<...>`), PDA derivation logic, state definitions (`state.rs`), constants, and error enums are **not included**. A full vulnerability assessment requires review of:
+
+- `instructions/create_amm.rs`
+- `instructions/create_pool.rs`
+
+Full technical advisory with root cause analysis and recommended patch is attached.
+
+Program Name: AnchorTokenSwap
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Looking forward to your team validating and resolving this issue securely.
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

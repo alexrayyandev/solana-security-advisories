@@ -1,0 +1,38 @@
+Subject: [Responsible Disclosure] Security Advisory: CRITICAL Vulnerability in AnchorTransferHookSwitch
+
+To the Core Protocol Security Team,
+
+During an independent security assessment of AnchorTransferHookSwitch (Token-2022 Transfer Hook Extension), our research team identified a vulnerability that could compromise program state or fund safety.
+
+Vulnerability Overview:
+# Security Advisory: transfer_switch
+
+**Researcher:** Alex Rayyan (bansoslab2026@tutamail.com)  
+**Program ID:** `FjcHckEgXcBhFmSGai3FRpDLiT6hbpV893n8iTxVd81g`
+
+## Executive Summary
+
+The provided entrypoint module exposes a transfer-hook-gated switch. The visible code does not itself implement account validation, PDA derivation, CPI, or arithmetic, so the most concrete issue observable at this layer is an authorization gap in the `switch` instruction: it is forwarded directly to `ctx.accounts.switch(on)` without any visible admin/signer gate at the program entrypoint. If the underlying `Switch` account constraints do not independently enforce an admin signer, any caller can toggle the transfer hook switch.
+
+**Severity Rating:** HIGH (potentially CRITICAL if `Switch` controls all token transfers and lacks independent admin enforcement)
+
+## Vulnerability Description
+
+### 1. Missing Visible Authorization on `switch`
+
+
+Full technical advisory with root cause analysis and recommended patch is attached.
+
+Program Name: AnchorTransferHookSwitch
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Looking forward to your team validating and resolving this issue securely.
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

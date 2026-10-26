@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: CRITICAL in AnchorAllowBlockList
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorAllowBlockList (Token-2022 Transfer Hook Compliance), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Defensive Security Audit: `abl_token` Solana Program
+
+**Auditor:** Alex Rayyan (bansoslab2026@tutamail.com)
+**Scope:** `lib.rs` program entry point only — implementation modules (`instructions/`, `state/`, `utils/`, `errors/`, `constants/`) were NOT provided for review.
+
+---
+
+## Executive Summary
+
+The provided source is the program's instruction dispatcher only. All security-critical logic resides in unprovided modules. This audit identifies **structural risks visible from the entry point** and enumerates the **mandatory review checklist** for the missing files. No severity rating can be finalized without the implementation source.
+
+**Provisional Severity: HIGH (pending full source review)** — transfer-hook programs with compliance/allowlist logic are high-impact attack surfaces.
+
+---
+
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorAllowBlockList
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

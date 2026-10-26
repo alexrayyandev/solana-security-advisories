@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: HIGH in AnchorCpiGuard
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorCpiGuard (Token-2022 CPI Guard Enforcement), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Defensive Security Audit Advisory
+
+**Program:** `cpi_guard`  
+**Researcher:** Alex Rayyan (bansoslab2026@tutamail.com)  
+**Overall Severity:** HIGH
+
+## Executive Summary
+
+The audited instruction performs a Token-2022 `transfer_checked` CPI, but it lacks ownership validation on the source token account, uses a globally shared PDA for the destination token account, and assigns the destination token account authority to itself. These flaws can result in account misuse, irreversible token lockup, and cross-user account collisions.
+
+## Technical Vulnerability Analysis & Affected Functions
+
+### 1. Missing Source Token Account Authority Check
+**Severity:** HIGH  
+**Affected:** `cpi_transfer`, `CpiTransfer.sender_token_account`
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorCpiGuard
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

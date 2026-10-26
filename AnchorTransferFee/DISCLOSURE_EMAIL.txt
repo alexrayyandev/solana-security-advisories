@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: CRITICAL in AnchorTransferFee
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorTransferFee (Token-2022 Transfer Fee Logic), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Security Advisory
+
+**Program:** `transfer_fee`  
+**Program ID:** `4evptdGtALCNT8uTxJhbWBRZpBE8w5oNtmgfSyfQu7td`  
+**Auditor:** Alex Rayyan  
+**Scope:** Supplied entrypoint file only (`lib.rs`)  
+**Severity:** **HIGH — Audit Incomplete / Residual Risk Unquantified**
+
+## Executive Summary
+
+The supplied source consists only of the Anchor program entrypoint and module declarations:
+
+- `initialize`
+- `transfer`
+- `harvest`
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorTransferFee
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

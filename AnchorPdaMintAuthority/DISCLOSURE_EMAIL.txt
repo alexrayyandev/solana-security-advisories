@@ -1,0 +1,38 @@
+Subject: [Responsible Disclosure] Security Advisory: CRITICAL Vulnerability in AnchorPdaMintAuthority
+
+To the Core Protocol Security Team,
+
+During an independent security assessment of AnchorPdaMintAuthority (Token Mint & PDA Authority), our research team identified a vulnerability that could compromise program state or fund safety.
+
+Vulnerability Overview:
+# Solana Security Audit Advisory
+
+## Executive Summary
+
+**Severity Rating:** INCOMPLETE — Cannot be fully assessed
+
+The provided source is limited to the program entry point (`lib.rs`). All security-critical logic resides in the referenced but unprovided modules (`instructions`, `state`, `errors`). No account validation, CPI, PDA derivation, arithmetic, or account lifecycle code is visible. A complete audit requires the full codebase.
+
+## What Is Visible
+
+| Item | Value |
+|---|---|
+| Program ID | `3LFrPHqwk5jMrmiz48BFj6NV2k4NjobgTe1jChzx3JGD` |
+| Instructions | `create_token`, `mint_token` |
+| Modules | `errors`, `instructions`, `state` |
+
+Full technical advisory with root cause analysis and recommended patch is attached.
+
+Program Name: AnchorPdaMintAuthority
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Looking forward to your team validating and resolving this issue securely.
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

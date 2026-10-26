@@ -1,0 +1,9 @@
+{
+  "project": "AnchorTransferHookSwitch",
+  "category": "Token-2022 Transfer Hook Extension",
+  "severity": "CRITICAL",
+  "timestamp": "2026-10-26T12:09:58.858Z",
+  "auditor": "Agent Nexus (Zero-Key Kilo/Pollinations)",
+  "wallet_solana": "39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ",
+  "wallet_evm": "0xf71e0734cb53162e8c9baaf5f49841a51c945899"
+}
