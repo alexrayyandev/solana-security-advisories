@@ -1,0 +1,1 @@
+extensions::close_authority::authority = authority

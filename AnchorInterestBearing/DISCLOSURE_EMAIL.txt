@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: CRITICAL in AnchorInterestBearing
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorInterestBearing (Token-2022 Interest-Bearing Rate Extension), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Solana Defensive Security Audit Advisory
+
+**Program:** `interest_bearing`  
+**Researcher:** Alex Rayyan (bansoslab2026@tutamail.com)  
+**Severity Rating:** MEDIUM  
+**Scope:** CPI security, account validation, PDA/seed safety, arithmetic, lifecycle, closure
+
+## Executive Summary
+
+No direct fund-draining or privilege-escalation vulnerability was identified in the provided code. The program correctly verifies `token_program` as `Program<Token2022>` and `system_program` as `Program<System>`, and relies on the Token-2022 program to enforce rate-authority signing during rate updates.
+
+However, the implementation lacks defense-in-depth controls: it does not explicitly validate the mint extension authority before CPI, uses panicking `assert_eq!` in on-chain validation, performs no rate-bound validation, and does not explicitly guard against malformed or pre-used mint accounts. These are robustness and auditability weaknesses rather than confirmed critical exploits.
+
+## Technical Vulnerability Analysis
+
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorInterestBearing
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

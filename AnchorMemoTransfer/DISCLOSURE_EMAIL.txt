@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: CRITICAL in AnchorMemoTransfer
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorMemoTransfer (Token-2022 Required Memo Validation), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Defensive Security Audit Advisory
+
+## Executive Summary & Severity Rating
+
+**Severity: MEDIUM**
+
+The program correctly uses Anchor signer and interface account abstractions for its primary flows, but it lacks explicit trusted-program binding for the mint account during initialization and does not explicitly bind the token account to the selected Token-2022 program during disable. These gaps can allow interface-compatible but program-mismatched accounts to be accepted where the implementation assumes Token-2022 ownership.
+
+No critical arithmetic, PDA, signer-bypass, or re-initialization vulnerability was identified in the reviewed code. The primary remediation is to strengthen account constraints and trusted program verification.
+
+---
+
+## Technical Vulnerability Analysis & Affected Functions
+
+### 1. Trusted Program Verification Gap for Mint Account
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorMemoTransfer
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

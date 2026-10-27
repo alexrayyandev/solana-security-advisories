@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: CRITICAL in AnchorDefaultAccountState
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorDefaultAccountState (Token-2022 Default Account State Enforcement), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Defensive Security Audit Advisory
+
+**Program:** `default_account_state`  
+**Framework:** Anchor / Rust  
+**Auditor:** Alex Rayyan (bansoslab2026@tutamail.com)
+
+---
+
+## Executive Summary & Severity Rating
+
+**Overall Severity: MEDIUM**
+
+The program correctly uses typed program accounts, signer constraints, and ordered Token-2022 CPI initialization. No critical account-takeover or arbitrary CPI vulnerability was identified. The primary defensive gaps are insufficient validation of the requested default account state and an unchecked integer cast during mint sizing.
+
+---
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorDefaultAccountState
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

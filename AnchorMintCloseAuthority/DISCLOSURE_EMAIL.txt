@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: CRITICAL in AnchorMintCloseAuthority
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorMintCloseAuthority (Token-2022 Mint Close Authority & Reclamation), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Defensive Security Audit Advisory
+
+## Executive Summary & Severity Rating
+
+**Overall Rating: MEDIUM (Availability / Defensive Posture)**
+
+The program is structurally sound for its narrow purpose. It correctly uses Anchor's `Program<Token2022>` verification, signer enforcement, and Token-2022 extension constraints. No critical fund-loss, privilege-escalation, or account-takeover vector was identified in the supplied code.
+
+Two defensive weaknesses are present:
+
+1. **Panic-prone assertion in `Initialize::check_mint_data`** — uses `assert_eq!`, which aborts with an opaque panic instead of a deterministic Anchor error.
+2. **No explicit zero-supply guard before closing the mint** — the program relies entirely on the token program to reject non-zero supply. This is acceptable functionally, but weaker for auditability, client-side error handling, and defense in depth.
+
+---
+
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorMintCloseAuthority
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com

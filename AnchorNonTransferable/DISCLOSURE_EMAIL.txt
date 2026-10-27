@@ -1,0 +1,36 @@
+Subject: [Responsible Disclosure] Security Audit Advisory: CRITICAL in AnchorNonTransferable
+
+To the Core Protocol Engineering & Security Team,
+
+During an independent security assessment of AnchorNonTransferable (Token-2022 Non-Transferable Soulbound Invariant), our research team identified a security issue that should be addressed before mainnet exposure.
+
+Finding Overview:
+# Defensive Security Audit Advisory
+
+## Executive Summary
+
+The reviewed program initializes a Token-2022 mint with the `NonTransferable` extension. The overall control flow is directionally correct: extension initialization occurs before mint initialization, required programs are typed through Anchor, and account creation is delegated to the System Program.
+
+No critical exploitable vulnerability was identified in the provided code. However, the implementation contains a compile-time CPI construction defect, an unchecked size cast, and missing explicit defensive guards around account initialization state. These should be remediated before deployment.
+
+**Severity Rating:** MEDIUM
+
+---
+
+## Technical Vulnerability Analysis
+
+### 1. CPI Program Account Passed as Pubkey Instead of AccountInfo
+
+Full technical security advisory with root cause analysis and verified remediation patch is attached.
+
+Program Name: AnchorNonTransferable
+Lead Researcher: Alex Rayyan (Lead Solana Security Researcher & Rust Auditor)
+Encrypted Contact: bansoslab2026@tutamail.com
+
+Bug Bounty / Grant Payout Wallets:
+- USDC (Solana SPL): 39YTqgacjKt1iz22SrvX4G3Ds8TUUjd9hWPPSJpdd2jZ
+- USDC (Base / EVM): 0xf71e0734cb53162e8c9baaf5f49841a51c945899
+
+Sincerely,
+Alex Rayyan
+bansoslab2026@tutamail.com
